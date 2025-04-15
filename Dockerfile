@@ -197,4 +197,4 @@ gunicorn --bind 0.0.0.0:8080 \
     chmod +x /app/run_gunicorn.sh
 
 # Run the shell script
-CMD ["/app/run_gunicorn.sh"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000", "--workers", "1", "--threads", "2"]
